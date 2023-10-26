@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>6.0</version>
+    <date>2023-10-26T07:28:44Z</date>
+    <groups>
+        <group>
+            <uuid>e960332b3f6c46a1956486d4f3f99fce</uuid>
+            <name>Templates/Server hardware</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <uuid>474ff9bf2fd14b5aaa5a60408d0bbb1c</uuid>
+            <template>Veeam - backupjob status</template>
+            <name>Veeam - backupjob status</name>
+            <description>Veeam Backup job status
+
+1 = Success
+2 = Starting
+3 = InProgress
+4 = Postprocessing
+5 = Pending
+6 = idle
+7 = Resuming
+8 = none
+9 = Working
+10 = Warning
+11 = Failed
+12 = None
+13 = Pausing
+14 = Stopped
+15 = Stopping
+16 = WaitingRepository
+17 = WaitingTape
+99 = error - no data found or job not executed</description>
+            <groups>
+                <group>
+                    <name>Templates/Server hardware</name>
+                </group>
+            </groups>
+            <items>
+                <item>
+                    <uuid>8df427e28ef74483b8d8defb30398db8</uuid>
+                    <name>Veeam backup status</name>
+                    <type>TRAP</type>
+                    <key>veeambackupstatus</key>
+                    <delay>0</delay>
+                    <description>Backup status 
+1 = Success
+2 = Starting
+3 = InProgress
+4 = Postprocessing
+5 = Pending
+6 = idle
+7 = Resuming
+8 = none
+9 = Working
+10 = Warning
+11 = Failed
+12 = None
+13 = Pausing
+14 = Stopped
+15 = Stopping
+16 = WaitingRepository
+17 = WaitingTape
+99 = Fout - geen info meetdata ontvangen. Of taak niet uitgevoerd.</description>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>backupjobstatus</value>
+                        </tag>
+                    </tags>
+                    <triggers>
+                        <trigger>
+                            <uuid>4de1d360477541c3a63eb6b1359b3463</uuid>
+                            <expression>last(/Veeam - backupjob status/veeambackupstatus)=99</expression>
+                            <name>backup jobstatus - no data</name>
+                            <priority>WARNING</priority>
+                            <description>Backup status 
+1 = Success
+2 = Starting
+3 = InProgress
+4 = Postprocessing
+5 = Pending
+6 = idle
+7 = Resuming
+8 = none
+9 = Working
+10 = Warning
+11 = Failed
+12 = None
+13 = Pausing
+14 = Stopped
+15 = Stopping
+16 = WaitingRepository
+17 = WaitingTape
+99 = Fout - geen info meetdata ontvangen. Of taak niet uitgevoerd.</description>
+                            <manual_close>YES</manual_close>
+                            <tags>
+                                <tag>
+                                    <tag>backup</tag>
+                                    <value>status</value>
+                                </tag>
+                            </tags>
+                        </trigger>
+                        <trigger>
+                            <uuid>ae1928b1d99440a1bd74998285fc26c3</uuid>
+                            <expression>last(/Veeam - backupjob status/veeambackupstatus)&gt;8</expression>
+                            <name>backup jobstatus error</name>
+                            <priority>WARNING</priority>
+                            <description>Backup status 
+1 = Success
+2 = Starting
+3 = InProgress
+4 = Postprocessing
+5 = Pending
+6 = idle
+7 = Resuming
+8 = none
+9 = Working
+10 = Warning
+11 = Failed
+12 = None
+13 = Pausing
+14 = Stopped
+15 = Stopping
+16 = WaitingRepository
+17 = WaitingTape
+99 = Fout - geen info meetdata ontvangen. Of taak niet uitgevoerd.</description>
+                            <manual_close>YES</manual_close>
+                            <tags>
+                                <tag>
+                                    <tag>backup</tag>
+                                    <value>status</value>
+                                </tag>
+                            </tags>
+                        </trigger>
+                        <trigger>
+                            <uuid>3613abb286174f88ad4e6f7fae0dc8aa</uuid>
+                            <expression>last(/Veeam - backupjob status/veeambackupstatus)&gt;9</expression>
+                            <name>backup jobstatus failed</name>
+                            <priority>WARNING</priority>
+                            <description>Backup status 
+1 = Success
+2 = Starting
+3 = InProgress
+4 = Postprocessing
+5 = Pending
+6 = idle
+7 = Resuming
+8 = none
+9 = Working
+10 = Warning
+11 = Failed
+12 = None
+13 = Pausing
+14 = Stopped
+15 = Stopping
+16 = WaitingRepository
+17 = WaitingTape
+99 = Fout - geen info meetdata ontvangen. Of taak niet uitgevoerd.</description>
+                            <manual_close>YES</manual_close>
+                            <tags>
+                                <tag>
+                                    <tag>backup</tag>
+                                    <value>status</value>
+                                </tag>
+                            </tags>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>fd827e3c896748c48a26ebd1b36ecf1e</uuid>
+                    <name>Veeambackupstatus_scripterror</name>
+                    <type>TRAP</type>
+                    <key>veeambackupstatusscript_error</key>
+                    <delay>0</delay>
+                    <description>veeambackupstatusscript_error</description>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>backupjobstatus_script</value>
+                        </tag>
+                    </tags>
+                    <triggers>
+                        <trigger>
+                            <uuid>f5d7d3b10d8446f892156fcf0809c1b1</uuid>
+                            <expression>last(/Veeam - backupjob status/veeambackupstatusscript_error)&gt;0</expression>
+                            <name>Veeam Backup - Script Error</name>
+                            <priority>WARNING</priority>
+                            <description>Error found in reader script</description>
+                            <manual_close>YES</manual_close>
+                            <tags>
+                                <tag>
+                                    <tag>backup</tag>
+                                    <value>scripterror</value>
+                                </tag>
+                            </tags>
+                        </trigger>
+                    </triggers>
+                </item>
+            </items>
+            <tags>
+                <tag>
+                    <tag>backup</tag>
+                    <value>status</value>
+                </tag>
+            </tags>
+        </template>
+    </templates>
+</zabbix_export>
