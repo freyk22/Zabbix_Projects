@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>6.0</version>
+    <date>2023-10-27T07:14:13Z</date>
+    <groups>
+        <group>
+            <uuid>7df96b18c230490a9a0a9e2307226338</uuid>
+            <name>Templates</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <uuid>7c875a64d41c4def8cc2b61e0b1c4b8b</uuid>
+            <template>speedtest-ookla</template>
+            <name>speedtest-ookla</name>
+            <description>Speedtest ookla</description>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <items>
+                <item>
+                    <uuid>87c72dc43c8c47f9ad2f62e3c67ea12d</uuid>
+                    <name>speedtest - downloadspeed - mbps</name>
+                    <type>TRAP</type>
+                    <key>downloadspeed</key>
+                    <delay>0</delay>
+                    <description>downloadspeed - mb/ps</description>
+                    <triggers>
+                        <trigger>
+                            <uuid>17c2804260754f54ab402f442c826a65</uuid>
+                            <expression>last(/speedtest-ookla/downloadspeed)&gt;0</expression>
+                            <name>Speedtest - Downloadspeed mbps</name>
+                            <status>DISABLED</status>
+                            <priority>WARNING</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>3660d8b77d9340c186de8d24d92c16c8</uuid>
+                    <name>speedtest - speedtestscripterror</name>
+                    <type>TRAP</type>
+                    <key>speedtestscripterror</key>
+                    <delay>0</delay>
+                    <description>speedtestscripterror</description>
+                    <triggers>
+                        <trigger>
+                            <uuid>b4dc342d9a254dedb8ee70229e625b0c</uuid>
+                            <expression>last(/speedtest-ookla/speedtestscripterror)=1</expression>
+                            <name>Speedtest scripterror</name>
+                            <priority>WARNING</priority>
+                            <description>Problems running speedtest script</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>fa20f76a533e4bdabded039b17705929</uuid>
+                    <name>speedtest - uploadspeed - mbps</name>
+                    <type>TRAP</type>
+                    <key>uploadspeed</key>
+                    <delay>0</delay>
+                    <description>uploadspeed - mb/ps</description>
+                    <triggers>
+                        <trigger>
+                            <uuid>62d1ee865e5449a9a05e5498a9dbbfed</uuid>
+                            <expression>last(/speedtest-ookla/uploadspeed)&gt;0</expression>
+                            <name>Speedtest - Uploadspeed mbps</name>
+                            <status>DISABLED</status>
+                            <priority>WARNING</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+            </items>
+        </template>
+    </templates>
+    <graphs>
+        <graph>
+            <uuid>42d9e2e852294292b9bf590168e9f33c</uuid>
+            <name>download speed mbps</name>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>1A7C11</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>speedtest-ookla</host>
+                        <key>downloadspeed</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <uuid>67348c0275e84173a2738d67c8c90778</uuid>
+            <name>download_and_upload speed mbps</name>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>1A7C11</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>speedtest-ookla</host>
+                        <key>downloadspeed</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>FFCA28</color>
+                    <item>
+                        <host>speedtest-ookla</host>
+                        <key>uploadspeed</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <uuid>39a5d6303fc0446aac9c1cea7245f73e</uuid>
+            <name>upload speed mbps</name>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>FFC107</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>speedtest-ookla</host>
+                        <key>uploadspeed</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+    </graphs>
+</zabbix_export>
