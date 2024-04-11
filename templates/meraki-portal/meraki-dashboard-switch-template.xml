@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.2</version>
+    <date>2022-05-31T09:52:16Z</date>
+    <groups>
+        <group>
+            <name>Templates/Network devices</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Meraki Portal - Switch - </template>
+            <name>Meraki Portal - Switch - </name>
+            <description>Template for Meraki Switch.
+It gets data from Meraki Dashboard</description>
+            <groups>
+                <group>
+                    <name>Templates/Network devices</name>
+                </group>
+            </groups>
+            <items>
+                <item>
+                    <name>Meraki Dashboard Switch - Switchport error</name>
+                    <type>TRAP</type>
+                    <key>merakidashboard_switch_porterror</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>Meraki portal - Script error
+Detect if there somehting wrong with meraki portal readerscript.
+0 is ok
+other value is error</description>
+                </item>
+                <item>
+                    <name>Meraki Dashboard Switch - Script error</name>
+                    <type>TRAP</type>
+                    <key>merakidashboard_switch_scripterror</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <description>Meraki portal - Script error
+Detect if there somehting wrong with meraki portal readerscript.
+0 is ok
+1 is error</description>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;0</expression>
+                            <name>merakiportal - scripterror</name>
+                            <priority>WARNING</priority>
+                            <description>Meraki portal - Script error
+Detect if there somehting wrong with meraki portal readerscript.
+0 is ok
+1 is error</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Meraki Dashboard Switch - switch_device_serial</name>
+                    <type>TRAP</type>
+                    <key>switch_device_serial</key>
+                    <delay>0</delay>
+                    <history>0</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                </item>
+                <item>
+                    <name>Meraki Dashboard Switch  - switch_porterror_counter</name>
+                    <type>TRAP</type>
+                    <key>switch_porterror_counter</key>
+                    <delay>0</delay>
+                    <description>switch_porterror_counter</description>
+                </item>
+                <item>
+                    <name>Meraki Dashboard Switch  - switch_porterror_string</name>
+                    <type>TRAP</type>
+                    <key>switch_porterror_string</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                </item>
+            </items>
+        </template>
+    </templates>
+</zabbix_export>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>6.0</version>
+    <date>2023-11-14T11:12:35Z</date>
+    <groups>
+        <group>
+            <uuid>36bff6c29af64692839d077febfc7079</uuid>
+            <name>Templates/Network devices</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <uuid>88768ef4ca30489bad5d585034c1da8c</uuid>
+            <template>Meraki Portal - network - </template>
+            <name>Meraki Portal - network - </name>
+            <groups>
+                <group>
+                    <name>Templates/Network devices</name>
+                </group>
+            </groups>
+            <items>
+                <item>
+                    <uuid>70f35d498e29408ebdbbe235295b2190</uuid>
+                    <name>merakidashboard -  network - scripterror</name>
+                    <type>TRAP</type>
+                    <key>merakidashboard_network_scripterror</key>
+                    <delay>0</delay>
+                    <triggers>
+                        <trigger>
+                            <uuid>a5e2717849bd450692300a1a74283071</uuid>
+                            <expression>last(/Meraki Portal - network - /merakidashboard_network_scripterror)&gt;0</expression>
+                            <name>Meraki Portal - Network - Scripterror</name>
+                            <priority>WARNING</priority>
+                            <description>Meraki Portal - Network - Scripterror</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>498ed3a04fda46ff98a4fc25e8f4b158</uuid>
+                    <name>meraki - network_health_Connectivity_connectednever_count</name>
+                    <type>TRAP</type>
+                    <key>network_health_Connectivity_connectednever_count</key>
+                    <delay>0</delay>
+                </item>
+                <item>
+                    <uuid>6ae6be746cde41578d2d0d249b94f16e</uuid>
+                    <name>meraki - network_health_Connectivity_neverconnecteddevices_string</name>
+                    <type>TRAP</type>
+                    <key>network_health_Connectivity_neverconnecteddevices_string</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <triggers>
+                        <trigger>
+                            <uuid>21889c9543d84c818faaef0c75eda2a0</uuid>
+                            <expression>length(last(/Meraki Portal - network - /network_health_Connectivity_neverconnecteddevices_string))&gt;4</expression>
+                            <name>Meraki Portal - Network - unreachable devices info</name>
+                            <status>DISABLED</status>
+                            <priority>WARNING</priority>
+                            <description>Meraki - Network - unreachable devices</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>d91d455431694255bd68e61a1053cf99</uuid>
+                    <name>meraki - network_health_Connectivity_unreachable_devices_count</name>
+                    <type>TRAP</type>
+                    <key>network_health_Connectivity_unreachable_devices_count</key>
+                    <delay>0</delay>
+                    <triggers>
+                        <trigger>
+                            <uuid>dfa365173a8d4f1580ac1a54d580808f</uuid>
+                            <expression>last(/Meraki Portal - network - /network_health_Connectivity_unreachable_devices_count)&gt;0</expression>
+                            <name>Meraki Portal - Network - unreachable devices count</name>
+                            <status>DISABLED</status>
+                            <description>Meraki - Network - unreachable devices</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>dc795c9f512949a3a023174edc09990d</uuid>
+                    <name>meraki - network_health_Connectivity_unreachable_devices_string</name>
+                    <type>TRAP</type>
+                    <key>network_health_Connectivity_unreachable_devices_string</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                </item>
+                <item>
+                    <uuid>22dbcc387b79462e8028a0ff5a2163f1</uuid>
+                    <name>meraki - network_health_insights_counter</name>
+                    <type>TRAP</type>
+                    <key>network_health_insights_counter</key>
+                    <delay>0</delay>
+                    <triggers>
+                        <trigger>
+                            <uuid>2e4a4bdeee31452d879631581fe6893d</uuid>
+                            <expression>last(/Meraki Portal - network - /network_health_insights_counter)&gt;0</expression>
+                            <name>Meraki Portal - Network - Insights</name>
+                            <status>DISABLED</status>
+                            <description>Displays needed advices</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>8e4ccdb1dc6e4bd3a83dab9dc45c8e8d</uuid>
+                    <name>meraki - network_health_insights_list_string</name>
+                    <type>TRAP</type>
+                    <key>network_health_insights_list_string</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <triggers>
+                        <trigger>
+                            <uuid>d28378ca32374d48b005d22a96ffb7bb</uuid>
+                            <expression>length(last(/Meraki Portal - network - /network_health_insights_list_string))&gt;3</expression>
+                            <name>Meraki Portal - Network - Insights - Info</name>
+                            <status>DISABLED</status>
+                            <description>Displays needed advices</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>edcc1e2a41d74e7cb821707348c2141a</uuid>
+                    <name>wireless_failedconnections_assoc_amount</name>
+                    <type>TRAP</type>
+                    <key>wireless_failedconnections_assoc_amount</key>
+                    <delay>0</delay>
+                    <description>failed connections wireless</description>
+                    <triggers>
+                        <trigger>
+                            <uuid>0ef8f4d8499249b5bf708911c3dd8e20</uuid>
+                            <expression>last(/Meraki Portal - network - /wireless_failedconnections_assoc_amount)&gt;0</expression>
+                            <name>Meraki Portal - Network - wireless connections error</name>
+                            <priority>WARNING</priority>
+                            <description>Meraki Portal - Network - connections error</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+            </items>
+        </template>
+    </templates>
+</zabbix_export>

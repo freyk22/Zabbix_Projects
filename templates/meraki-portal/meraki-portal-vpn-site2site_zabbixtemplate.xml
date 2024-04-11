@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>6.0</version>
+    <date>2023-10-20T13:07:41Z</date>
+    <groups>
+        <group>
+            <uuid>36bff6c29af64692839d077febfc7079</uuid>
+            <name>Templates/Network devices</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <uuid>f01f0c6f528f4d5eaa52dd75cd825f9f</uuid>
+            <template>Meraki Portal - VPN - Site2site - </template>
+            <name>Meraki Portal - VPN - Site2site -  - test</name>
+            <description>Meraki Portal - vpn - site2site - </description>
+            <groups>
+                <group>
+                    <name>Templates/Network devices</name>
+                </group>
+            </groups>
+            <items>
+                <item>
+                    <uuid>262cf44ef08f442b9508b14039be80aa</uuid>
+                    <name>meraki - vpns2s - scripterror</name>
+                    <type>TRAP</type>
+                    <key>merakiportal_vpns2s_scripterror</key>
+                    <delay>0</delay>
+                    <triggers>
+                        <trigger>
+                            <uuid>b502ba4e4edf4d0888c1379d28afd54d</uuid>
+                            <expression>last(/Meraki Portal - VPN - Site2site - /merakiportal_vpns2s_scripterror)&gt;0</expression>
+                            <name>meraki portal - site2site - scripterror</name>
+                            <priority>WARNING</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>478612ecb8b144a3b9ca90e8356c972e</uuid>
+                    <name>vpnsite2site_object_networkname</name>
+                    <type>TRAP</type>
+                    <key>vpnsite2site_object_networkname</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>vpnsite2site_object_networkname</description>
+                </item>
+                <item>
+                    <uuid>f6c6f812a76f441da34e0679681b7e4d</uuid>
+                    <name>vpnsite2site_object_reachability</name>
+                    <type>TRAP</type>
+                    <key>vpnsite2site_object_reachability</key>
+                    <delay>0</delay>
+                    <description>vpnsite2site_object_reachability
+0 = error
+1 = ok</description>
+                    <triggers>
+                        <trigger>
+                            <uuid>a176d5e6ee2e40feaa58126ff066e1c1</uuid>
+                            <expression>last(/Meraki Portal - VPN - Site2site - /vpnsite2site_object_reachability)&lt;1</expression>
+                            <name>meraki portal - site2site - reachability error</name>
+                            <priority>WARNING</priority>
+                            <description>meraki portal - site2site - reachability error</description>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>633dcb91858d4468a2b75dd0f13b698d</uuid>
+                    <name>vpnsite2site_object_reachability1</name>
+                    <type>TRAP</type>
+                    <key>vpnsite2site_object_reachability1</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>vpnsite2site_object_reachability1</description>
+                </item>
+                <item>
+                    <uuid>9a4de6679c4e44488f9e52c2ea4ce4ae</uuid>
+                    <name>vpn_appliance_deviceStatus</name>
+                    <type>TRAP</type>
+                    <key>vpn_appliance_deviceStatus</key>
+                    <delay>0</delay>
+                    <description>vpn_appliance_deviceStatus
+0 = error
+1 = ok</description>
+                    <triggers>
+                        <trigger>
+                            <uuid>6bcc65480f174d5185b1863fe19bd2ff</uuid>
+                            <expression>last(/Meraki Portal - VPN - Site2site - /vpn_appliance_deviceStatus)&lt;1</expression>
+                            <name>meraki portal - site2site - device status error</name>
+                            <priority>WARNING</priority>
+                            <description>meraki portal - site2site - device status error</description>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>62a52518a4b74957bf9762f3c21af1fa</uuid>
+                    <name>vpn_appliance_deviceStatus1</name>
+                    <type>TRAP</type>
+                    <key>vpn_appliance_deviceStatus1</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>vpn_appliance_deviceStatus1</description>
+                </item>
+                <item>
+                    <uuid>a219260a0f91452984adc38b7abb63b9</uuid>
+                    <name>vpn_appliance_networkName</name>
+                    <type>TRAP</type>
+                    <key>vpn_appliance_networkName</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                </item>
+            </items>
+        </template>
+    </templates>
+</zabbix_export>
