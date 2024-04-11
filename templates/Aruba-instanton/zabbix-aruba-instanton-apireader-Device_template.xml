@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.2</version>
+    <date>2022-03-03T12:50:38Z</date>
+    <groups>
+        <group>
+            <name>Templates/Network devices</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Aruba - instant on portal - device - </template>
+            <name>Aruba - instant on portal - device - </name>
+            <description>Aruba - instant on portal - device - </description>
+            <groups>
+                <group>
+                    <name>Templates/Network devices</name>
+                </group>
+            </groups>
+            <items>
+                <item>
+                    <name>aiopd_currentdrtversion</name>
+                    <type>TRAP</type>
+                    <key>aiopd_currentdrtversion</key>
+                    <delay>0</delay>
+                    <history>0</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>aiopd_currentdrtversion</description>
+                </item>
+                <item>
+                    <name>aiopd_currentfirmwareversion</name>
+                    <type>TRAP</type>
+                    <key>aiopd_currentfirmwareversion</key>
+                    <delay>0</delay>
+                    <history>0</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>aiopd_currentfirmwareversion</description>
+                </item>
+                <item>
+                    <name>aiopd_ethernetportsduplex</name>
+                    <type>TRAP</type>
+                    <key>aiopd_ethernetportsduplex</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>aiopd_ethernetportsduplex</description>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=0</expression>
+                            <name>Error - Ethernetport is not duplex</name>
+                            <status>DISABLED</status>
+                            <priority>WARNING</priority>
+                            <description>Error ethernetports is not duplex</description>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>aiopd_ethernetportsislinkflappingdetected</name>
+                    <type>TRAP</type>
+                    <key>aiopd_ethernetportsislinkflappingdetected</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>aiopd_ethernetportsislinkflappingdetected</description>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=0</expression>
+                            <name>Error - ethernetport is link flapping</name>
+                            <status>DISABLED</status>
+                            <priority>WARNING</priority>
+                            <description>Error ethernetports is not duplex</description>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>aiopd_ethernetportsislinkup</name>
+                    <type>TRAP</type>
+                    <key>aiopd_ethernetportsislinkup</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>aiopd_ethernetportsislinkup</description>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=0</expression>
+                            <name>Error - ethernetport is link down</name>
+                            <status>DISABLED</status>
+                            <priority>WARNING</priority>
+                            <description>Error - ethernetport is link down</description>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>aiopd_ethernetportsisloopdetected</name>
+                    <type>TRAP</type>
+                    <key>aiopd_ethernetportsisloopdetected</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>aiopd_ethernetportsisloopdetected</description>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=0</expression>
+                            <name>Error - ethernetport loop detected</name>
+                            <status>DISABLED</status>
+                            <priority>WARNING</priority>
+                            <description>Error - ethernetport is link down</description>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>aiopd_isunderpowered</name>
+                    <type>TRAP</type>
+                    <key>aiopd_isunderpowered</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>aiopd_isunderpowered</description>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=0</expression>
+                            <name>Error - device is underpowererd</name>
+                            <status>DISABLED</status>
+                            <priority>WARNING</priority>
+                            <description>Error - device is underpowererd</description>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>aiopd_model</name>
+                    <type>TRAP</type>
+                    <key>aiopd_model</key>
+                    <delay>0</delay>
+                    <history>0</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>aiopd_model</description>
+                </item>
+                <item>
+                    <name>aiopd_name</name>
+                    <type>TRAP</type>
+                    <key>aiopd_name</key>
+                    <delay>0</delay>
+                    <history>0</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>aiopd_name</description>
+                </item>
+                <item>
+                    <name>aiopd_operationalstate</name>
+                    <type>TRAP</type>
+                    <key>aiopd_operationalstate</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>aiopd_operationalstate</description>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=0</expression>
+                            <name>Error - problem in operational status</name>
+                            <status>DISABLED</status>
+                            <priority>WARNING</priority>
+                            <description>Error - problem in operational status</description>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>aiopd_scripterror</name>
+                    <type>TRAP</type>
+                    <key>aiopd_scripterror</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <description>aiopd_scripterror</description>
+                </item>
+                <item>
+                    <name>aiopd_status</name>
+                    <type>TRAP</type>
+                    <key>aiopd_status</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>aiopd_status</description>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=0</expression>
+                            <name>Error - Status is failed</name>
+                            <status>DISABLED</status>
+                            <priority>WARNING</priority>
+                            <description>Error - Status is failed</description>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>aiopd_uptimeinseconds</name>
+                    <type>TRAP</type>
+                    <key>aiopd_uptimeinseconds</key>
+                    <delay>0</delay>
+                    <history>0</history>
+                    <trends>0</trends>
+                    <status>DISABLED</status>
+                    <description>aiopd_uptimeinseconds</description>
+                </item>
+            </items>
+        </template>
+    </templates>
+</zabbix_export>

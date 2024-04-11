@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.2</version>
+    <date>2022-05-03T14:22:11Z</date>
+    <groups>
+        <group>
+            <name>Virtual machines</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>aruba-instanton-portal-portal</template>
+            <name>Aruba - instant on portal - portal - </name>
+            <description>Aruba - instant on portal - portal - </description>
+            <groups>
+                <group>
+                    <name>Virtual machines</name>
+                </group>
+            </groups>
+            <items>
+                <item>
+                    <name>aiop_AlertsSummary_activeMajorAlertsCount</name>
+                    <type>TRAP</type>
+                    <key>aiop_AlertsSummary_activeMajorAlertsCount</key>
+                    <delay>0</delay>
+                    <description>aiop_AlertsSummary_activeMajorAlertsCount</description>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;0</expression>
+                            <name>Aruba instant on Portal - AlertsSummary - active Major Alerts detected</name>
+                            <priority>WARNING</priority>
+                            <description>Aruba instant on Portal - AlertsSummary - active Major Alerts detected</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>aiop_AlertsSummary_activeMinorAlertsCount</name>
+                    <type>TRAP</type>
+                    <key>aiop_AlertsSummary_activeMinorAlertsCount</key>
+                    <delay>0</delay>
+                    <description>aiop_AlertsSummary_activeMinorAlertsCount</description>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;0</expression>
+                            <name>Aruba instant on Portal - AlertsSummary - active Minor Alerts detected</name>
+                            <priority>WARNING</priority>
+                            <description>Aruba instant on Portal - AlertsSummary - active Minor Alerts detected</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>aiop_LandingPage_activeAlertsCount</name>
+                    <type>TRAP</type>
+                    <key>aiop_LandingPage_activeAlertsCount</key>
+                    <delay>0</delay>
+                    <description>aiop_LandingPage_activeAlertsCount</description>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;0</expression>
+                            <name>Aruba instant on Portal -  Landing page - active Alerts detected</name>
+                            <priority>WARNING</priority>
+                            <description>Aruba instant on Portal -  Landing page - active Alerts detected</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>aiop_LandingPage_health</name>
+                    <type>TRAP</type>
+                    <key>aiop_LandingPage_health</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>LandingPage_siteName</description>
+                    <triggers>
+                        <trigger>
+                            <expression>{str(good)}=0</expression>
+                            <name>Aruba instant on Portal -  Landing Page - health Alert detected</name>
+                            <priority>WARNING</priority>
+                            <description>Aruba instant on Portal -  LandingPage health Alert detected</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>aiop_LandingPage_healthReason</name>
+                    <type>TRAP</type>
+                    <key>aiop_LandingPage_healthReason</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>LandingPage_siteName</description>
+                    <triggers>
+                        <trigger>
+                            <expression>{str(noProblemFound)}=0</expression>
+                            <name>Aruba instant on Portal -  Landing Page - health reason Alert detected</name>
+                            <priority>WARNING</priority>
+                            <description>Aruba instant on Portal -  Landing Page - health reason Alert detected</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>aiop_LandingPage_siteName</name>
+                    <type>TRAP</type>
+                    <key>aiop_LandingPage_siteName</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>LandingPage_siteName</description>
+                </item>
+                <item>
+                    <name>aiop_maintenance_state</name>
+                    <type>TRAP</type>
+                    <key>aiop_maintenance_state</key>
+                    <delay>0</delay>
+                    <description>aiop_maintenance_state</description>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&lt;0</expression>
+                            <name>Aruba instant on Portal -  Landing Page - Maintenance state detected</name>
+                            <priority>WARNING</priority>
+                            <description>Aruba instant on Portal -  Landing Page - health reason Alert detected</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>aiop_maintenance_totalDeviceToUpdate</name>
+                    <type>TRAP</type>
+                    <key>aiop_maintenance_totalDeviceToUpdate</key>
+                    <delay>0</delay>
+                    <description>aiop_maintenance_totalDeviceToUpdate</description>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=0</expression>
+                            <name>Aruba instant on Portal -  Maintenance - No devices up to date</name>
+                            <status>DISABLED</status>
+                            <priority>WARNING</priority>
+                            <description>Aruba instant on Portal -  Landing page - active Alerts detected</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>aiopd_name</name>
+                    <type>TRAP</type>
+                    <key>aiop_name</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>aiopd_name</description>
+                </item>
+                <item>
+                    <name>aiop_scripterror</name>
+                    <type>TRAP</type>
+                    <key>aiop_scripterror</key>
+                    <delay>0</delay>
+                    <description>aiop_scripterror</description>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;0</expression>
+                            <name>Aruba instant on Portal - Script error detected</name>
+                            <priority>WARNING</priority>
+                            <description>Aruba instant on Portal - Script error detected</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>aiop_specificerror_value</name>
+                    <type>TRAP</type>
+                    <key>aiop_specificerror_value</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>aiop_specificerror_value</description>
+                    <triggers>
+                        <trigger>
+                            <expression>{diff(0)}=1</expression>
+                            <recovery_mode>NONE</recovery_mode>
+                            <name>Aruba Instant on Portal - Specific error</name>
+                            <priority>WARNING</priority>
+                            <description>Aruba Instant on - Specific error.
+aub Melding bestuderen en dan sluiten</description>
+                            <type>MULTIPLE</type>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+            </items>
+        </template>
+    </templates>
+</zabbix_export>

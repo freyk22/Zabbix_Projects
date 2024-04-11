@@ -1,0 +1,893 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>6.0</version>
+    <date>2023-09-04T10:12:53Z</date>
+    <groups>
+        <group>
+            <uuid>36bff6c29af64692839d077febfc7079</uuid>
+            <name>Templates/Network devices</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <uuid>40a8ec6731c14880a3089fe22ac50c12</uuid>
+            <template>Cove Backup Check - </template>
+            <name>Cove Backup Check - </name>
+            <description>Cove Backup Check - </description>
+            <groups>
+                <group>
+                    <name>Templates/Network devices</name>
+                </group>
+            </groups>
+            <items>
+                <item>
+                    <uuid>fb2ff24227ae4872b103de28310522ac</uuid>
+                    <name>cove_device_Customer</name>
+                    <type>TRAP</type>
+                    <key>cove_device_Customer</key>
+                    <delay>0</delay>
+                    <history>20d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>backupjobstatus</value>
+                        </tag>
+                        <tag>
+                            <tag>backup</tag>
+                            <value>status</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>b7a843c9b2334c7db4f14fba87a54fea</uuid>
+                    <name>cove_device_Expirated</name>
+                    <type>TRAP</type>
+                    <key>cove_device_Expirated</key>
+                    <delay>0</delay>
+                    <history>20d</history>
+                    <trends>0</trends>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>backupjobstatus</value>
+                        </tag>
+                        <tag>
+                            <tag>backup</tag>
+                            <value>status</value>
+                        </tag>
+                    </tags>
+                    <triggers>
+                        <trigger>
+                            <uuid>c413955973054e08a340137de681a135</uuid>
+                            <expression>last(/Cove Backup Check - /cove_device_Expirated)&gt;=1</expression>
+                            <name>Cove backup - Device - Licence Expirated</name>
+                            <priority>WARNING</priority>
+                            <description>Cove backup - Device Licenced Expirated</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>f7da1bf3478a4095b3ec5ae081a9be9d</uuid>
+                    <name>cove_device_Expirationdate</name>
+                    <type>TRAP</type>
+                    <key>cove_device_Expirationdate</key>
+                    <delay>0</delay>
+                    <history>20d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>backupjobstatus</value>
+                        </tag>
+                        <tag>
+                            <tag>backup</tag>
+                            <value>status</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>89119fe5528b4244ab47188d802f4ade</uuid>
+                    <name>cove_msex_LastCompletedSessionStatus</name>
+                    <type>TRAP</type>
+                    <key>cove_msex_LastCompletedSessionStatus</key>
+                    <delay>0</delay>
+                    <history>20d</history>
+                    <trends>0</trends>
+                    <description>cove_msex_LastCompletedSessionStatus
+1 – In process
+2 – Failed
+3 – Aborted
+5 – Completed
+6 – Interrupted
+7 – NotStarted
+8 – CompletedWithErrors
+9 – InProgressWithFaults
+10 – OverQuota
+11 – NoSelection
+12 – Restarted</description>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>backupjobstatus</value>
+                        </tag>
+                        <tag>
+                            <tag>backup</tag>
+                            <value>status</value>
+                        </tag>
+                    </tags>
+                    <triggers>
+                        <trigger>
+                            <uuid>4a676e3a58494578ad51b33db21ce22f</uuid>
+                            <expression>last(/Cove Backup Check - /cove_msex_LastCompletedSessionStatus)&lt;&gt;5</expression>
+                            <name>Cove backup - ms exchange  - Last Completed Session Status 1 Error</name>
+                            <priority>WARNING</priority>
+                            <description>Cove backup - msexchange  - Last Completed Session Status Error
+    1 – In process
+    2 – Failed
+    3 – Aborted
+    5 – Completed
+    6 – Interrupted
+    7 – NotStarted
+    8 – CompletedWithErrors
+    9 – InProgressWithFaults
+    10 – OverQuota
+    11 – NoSelection
+    12 – Restarted</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>1bc72dc5ba1d4f89b212d0f78a789d2f</uuid>
+                    <name>cove_msex_LastCompletedSessionTimestamp</name>
+                    <type>TRAP</type>
+                    <key>cove_msex_LastCompletedSessionTimestamp</key>
+                    <delay>0</delay>
+                    <history>20d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>backupjobstatus</value>
+                        </tag>
+                        <tag>
+                            <tag>backup</tag>
+                            <value>status</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>526acf9a68464b2a9d2774ed765daf0d</uuid>
+                    <name>cove_msex_LastSessionErrorsCount</name>
+                    <type>TRAP</type>
+                    <key>cove_msex_LastSessionErrorsCount</key>
+                    <delay>0</delay>
+                    <history>20d</history>
+                    <trends>0</trends>
+                    <description>if an error is counted, then there is an error detected</description>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>backupjobstatus</value>
+                        </tag>
+                        <tag>
+                            <tag>backup</tag>
+                            <value>status</value>
+                        </tag>
+                    </tags>
+                    <triggers>
+                        <trigger>
+                            <uuid>5a1ef702830c46e4a83ad06ee4455ea2</uuid>
+                            <expression>last(/Cove Backup Check - /cove_msex_LastSessionErrorsCount)&gt;=1</expression>
+                            <name>Cove backup - ms exchange - LastSession Errors Count</name>
+                            <priority>WARNING</priority>
+                            <description>Cove backup - ms Exchange - LastSession Errors Count
+More then 0 errors, then there are errors found</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>ad40f15bba3e4f1898562352f6d6b2e7</uuid>
+                    <name>cove_msex_LastSessionTimestamp</name>
+                    <type>TRAP</type>
+                    <key>cove_msex_LastSessionTimestamp</key>
+                    <delay>0</delay>
+                    <history>20d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>backupjobstatus</value>
+                        </tag>
+                        <tag>
+                            <tag>backup</tag>
+                            <value>status</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>962dd517d0fb49bc910a4a7dcb65d652</uuid>
+                    <name>cove_msex_LastSuccessfulSessionStatus</name>
+                    <type>TRAP</type>
+                    <key>cove_msex_LastSuccessfulSessionStatus</key>
+                    <delay>0</delay>
+                    <history>20d</history>
+                    <trends>0</trends>
+                    <description>cove_msex_LastSuccessfulSessionStatus
+1 – In process
+2 – Failed
+3 – Aborted
+5 – Completed
+6 – Interrupted
+7 – NotStarted
+8 – CompletedWithErrors
+9 – InProgressWithFaults
+10 – OverQuota
+11 – NoSelection
+12 – Restarted</description>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>backupjobstatus</value>
+                        </tag>
+                        <tag>
+                            <tag>backup</tag>
+                            <value>status</value>
+                        </tag>
+                    </tags>
+                    <triggers>
+                        <trigger>
+                            <uuid>d52ee292acee416a8b28e08ce9f795da</uuid>
+                            <expression>last(/Cove Backup Check - /cove_msex_LastSuccessfulSessionStatus)&lt;&gt;5</expression>
+                            <name>Cove backup - ms exchange  - Last Successful Session Status 1 Error</name>
+                            <status>DISABLED</status>
+                            <priority>WARNING</priority>
+                            <description>Cove backup - msexchange  - Last Successful Session Status Error
+    1 – In process
+    2 – Failed
+    3 – Aborted
+    5 – Completed
+    6 – Interrupted
+    7 – NotStarted
+    8 – CompletedWithErrors
+    9 – InProgressWithFaults
+    10 – OverQuota
+    11 – NoSelection
+    12 – Restarted</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                        <trigger>
+                            <uuid>aa37edf85971443f8756302ccf668128</uuid>
+                            <expression>last(/Cove Backup Check - /cove_msex_LastSuccessfulSessionStatus)&lt;&gt;5</expression>
+                            <name>Cove backup - ms exchange  - Last Successful Session Status 2 Error</name>
+                            <status>DISABLED</status>
+                            <priority>WARNING</priority>
+                            <description>Cove backup - msexchange  - Last Successful Session Status Error
+    1 – In process
+    2 – Failed
+    3 – Aborted
+    5 – Completed
+    6 – Interrupted
+    7 – NotStarted
+    8 – CompletedWithErrors
+    9 – InProgressWithFaults
+    10 – OverQuota
+    11 – NoSelection
+    12 – Restarted</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>d54cff8aae364eb699d5a62214c7887e</uuid>
+                    <name>cove_msex_LastsuccessfulsessionTimestamp</name>
+                    <type>TRAP</type>
+                    <key>cove_msex_LastsuccessfulsessionTimestamp</key>
+                    <delay>0</delay>
+                    <history>20d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>backupjobstatus</value>
+                        </tag>
+                        <tag>
+                            <tag>backup</tag>
+                            <value>status</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>6e0b85f6f7dc475daf218dfd2e3d72c4</uuid>
+                    <name>cove_msod_LastCompletedSessionStatus</name>
+                    <type>TRAP</type>
+                    <key>cove_msod_LastCompletedSessionStatus</key>
+                    <delay>0</delay>
+                    <history>20d</history>
+                    <trends>0</trends>
+                    <description>cove_msod_LastCompletedSessionStatus
+1 – In process
+2 – Failed
+3 – Aborted
+5 – Completed
+6 – Interrupted
+7 – NotStarted
+8 – CompletedWithErrors
+9 – InProgressWithFaults
+10 – OverQuota
+11 – NoSelection
+12 – Restarted</description>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>backupjobstatus</value>
+                        </tag>
+                        <tag>
+                            <tag>backup</tag>
+                            <value>status</value>
+                        </tag>
+                    </tags>
+                    <triggers>
+                        <trigger>
+                            <uuid>0313bdf1e1554de0970aafe2b6726bde</uuid>
+                            <expression>last(/Cove Backup Check - /cove_msod_LastCompletedSessionStatus)&lt;&gt;5</expression>
+                            <name>Cove backup - ms onedrive - Last Completed Session Status Error</name>
+                            <priority>WARNING</priority>
+                            <description>Cove backup - ms onedrive - Last Completed Session Status Error
+    1 – In process
+    2 – Failed
+    3 – Aborted
+    5 – Completed
+    6 – Interrupted
+    7 – NotStarted
+    8 – CompletedWithErrors
+    9 – InProgressWithFaults
+    10 – OverQuota
+    11 – NoSelection
+    12 – Restarted</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>480c50a1d4004d8097de39b54e7130ed</uuid>
+                    <name>cove_msod_LastCompletedSessionTimestamp</name>
+                    <type>TRAP</type>
+                    <key>cove_msod_LastCompletedSessionTimestamp</key>
+                    <delay>0</delay>
+                    <history>20d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>backupjobstatus</value>
+                        </tag>
+                        <tag>
+                            <tag>backup</tag>
+                            <value>status</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>1f66514503e047869acd648b4a8a1ffd</uuid>
+                    <name>cove_msod_LastSessionErrorsCount</name>
+                    <type>TRAP</type>
+                    <key>cove_msod_LastSessionErrorsCount</key>
+                    <delay>0</delay>
+                    <history>20d</history>
+                    <trends>0</trends>
+                    <description>if an error is counted, then there is an error detected</description>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>backupjobstatus</value>
+                        </tag>
+                        <tag>
+                            <tag>backup</tag>
+                            <value>status</value>
+                        </tag>
+                    </tags>
+                    <triggers>
+                        <trigger>
+                            <uuid>b3ca3cd97be244d8ad66dc0895132f4d</uuid>
+                            <expression>last(/Cove Backup Check - /cove_msod_LastSessionErrorsCount)&gt;=1</expression>
+                            <name>Cove backup - ms ondrive - Last Session Errors Count</name>
+                            <priority>WARNING</priority>
+                            <description>Cove backup - ms ondrive - Last Session Errors Count
+More then 0 errors, then there are errors found</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>d82ab6caac1b453da32e36dd8c4badab</uuid>
+                    <name>cove_msod_LastSessionTimestamp</name>
+                    <type>TRAP</type>
+                    <key>cove_msod_LastSessionTimestamp</key>
+                    <delay>0</delay>
+                    <history>20d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>backupjobstatus</value>
+                        </tag>
+                        <tag>
+                            <tag>backup</tag>
+                            <value>status</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>5fc17b6b456e45d5820170f6a8b776fa</uuid>
+                    <name>cove_msod_LastSuccessfulSessionStatus</name>
+                    <type>TRAP</type>
+                    <key>cove_msod_LastSuccessfulSessionStatus</key>
+                    <delay>0</delay>
+                    <history>20d</history>
+                    <trends>0</trends>
+                    <description>cove_msod_LastSuccessfulSessionStatus
+1 – In process
+2 – Failed
+3 – Aborted
+5 – Completed
+6 – Interrupted
+7 – NotStarted
+8 – CompletedWithErrors
+9 – InProgressWithFaults
+10 – OverQuota
+11 – NoSelection
+12 – Restarted</description>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>backupjobstatus</value>
+                        </tag>
+                        <tag>
+                            <tag>backup</tag>
+                            <value>status</value>
+                        </tag>
+                    </tags>
+                    <triggers>
+                        <trigger>
+                            <uuid>f8429a4eda08423984da4dc5f86cec6d</uuid>
+                            <expression>last(/Cove Backup Check - /cove_msod_LastSuccessfulSessionStatus)&lt;&gt;5</expression>
+                            <name>Cove backup - ms ondrive  - Last Successful Session Status Error</name>
+                            <status>DISABLED</status>
+                            <priority>WARNING</priority>
+                            <description>Cove backup - ms ondrive  - Last Successful Session Status Error
+    1 – In process
+    2 – Failed
+    3 – Aborted
+    5 – Completed
+    6 – Interrupted
+    7 – NotStarted
+    8 – CompletedWithErrors
+    9 – InProgressWithFaults
+    10 – OverQuota
+    11 – NoSelection
+    12 – Restarted</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>f0cfd49a269b413a9a7868ea2d88ce85</uuid>
+                    <name>cove_msod_LastsuccessfulsessionTimestamp</name>
+                    <type>TRAP</type>
+                    <key>cove_msod_LastsuccessfulsessionTimestamp</key>
+                    <delay>0</delay>
+                    <history>20d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>backupjobstatus</value>
+                        </tag>
+                        <tag>
+                            <tag>backup</tag>
+                            <value>status</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>71c0a5120ac64bd8a28851fee1d36768</uuid>
+                    <name>cove_scripterror</name>
+                    <type>TRAP</type>
+                    <key>cove_scripterror</key>
+                    <delay>0</delay>
+                    <history>20d</history>
+                    <trends>0</trends>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>backupjobstatus</value>
+                        </tag>
+                        <tag>
+                            <tag>backup</tag>
+                            <value>status</value>
+                        </tag>
+                    </tags>
+                    <triggers>
+                        <trigger>
+                            <uuid>16eec67256404015987c0c5611096397</uuid>
+                            <expression>last(/Cove Backup Check - /cove_scripterror)&gt;=1</expression>
+                            <name>Cove backup - Script Error</name>
+                            <priority>WARNING</priority>
+                            <description>Cove backup - Script Error.
+If error please check script</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>1056f650f7964affa6217382a76fdeb5</uuid>
+                    <name>cove_sp_LastCompletedSessionStatus</name>
+                    <type>TRAP</type>
+                    <key>cove_sp_LastCompletedSessionStatus</key>
+                    <delay>0</delay>
+                    <history>20d</history>
+                    <trends>0</trends>
+                    <description>cove_sp_LastCompletedSessionStatus
+1 – In process
+2 – Failed
+3 – Aborted
+5 – Completed
+6 – Interrupted
+7 – NotStarted
+8 – CompletedWithErrors
+9 – InProgressWithFaults
+10 – OverQuota
+11 – NoSelection
+12 – Restarted</description>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>backupjobstatus</value>
+                        </tag>
+                        <tag>
+                            <tag>backup</tag>
+                            <value>status</value>
+                        </tag>
+                    </tags>
+                    <triggers>
+                        <trigger>
+                            <uuid>ba83a741ad1f468b912b299b0aae15eb</uuid>
+                            <expression>last(/Cove Backup Check - /cove_sp_LastCompletedSessionStatus)&lt;&gt;5</expression>
+                            <name>Cove backup - ms Sharepoint - Last Completed Session Status Error</name>
+                            <priority>WARNING</priority>
+                            <description>Cove backup - msexchange  - Last Completed Session Status Error
+    1 – In process
+    2 – Failed
+    3 – Aborted
+    5 – Completed
+    6 – Interrupted
+    7 – NotStarted
+    8 – CompletedWithErrors
+    9 – InProgressWithFaults
+    10 – OverQuota
+    11 – NoSelection
+    12 – Restarted</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>081b7e79dc5d44cd9d038ac7eb21a043</uuid>
+                    <name>cove_sp_LastCompletedSessionTimestamp</name>
+                    <type>TRAP</type>
+                    <key>cove_sp_LastCompletedSessionTimestamp</key>
+                    <delay>0</delay>
+                    <history>20d</history>
+                    <trends>0</trends>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>backupjobstatus</value>
+                        </tag>
+                        <tag>
+                            <tag>backup</tag>
+                            <value>status</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>aee0b9a902984693bde850889ef5625c</uuid>
+                    <name>cove_sp_LastSessionErrorsCount</name>
+                    <type>TRAP</type>
+                    <key>cove_sp_LastSessionErrorsCount</key>
+                    <delay>0</delay>
+                    <history>20d</history>
+                    <trends>0</trends>
+                    <description>if an error is counted, then there is an error detected</description>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>backupjobstatus</value>
+                        </tag>
+                        <tag>
+                            <tag>backup</tag>
+                            <value>status</value>
+                        </tag>
+                    </tags>
+                    <triggers>
+                        <trigger>
+                            <uuid>7dcd51ddc1ab4ca4990b6b7043bb5272</uuid>
+                            <expression>last(/Cove Backup Check - /cove_sp_LastSessionErrorsCount)&gt;=1</expression>
+                            <name>Cove backup - ms Sharepoint - Last Session Errors Count</name>
+                            <priority>WARNING</priority>
+                            <description>Cove backup - ms Sharepoint - Last Session Errors Count
+More then 0 errors, then there are errors found</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>3086f2b0f2ca45539de68d2b7424d1ba</uuid>
+                    <name>cove_sp_LastSuccessfulSessionStatus</name>
+                    <type>TRAP</type>
+                    <key>cove_sp_LastSuccessfulSessionStatus</key>
+                    <delay>0</delay>
+                    <history>20d</history>
+                    <trends>0</trends>
+                    <description>cove_sp_LastSuccessfulSessionStatus
+1 – In process
+2 – Failed
+3 – Aborted
+5 – Completed
+6 – Interrupted
+7 – NotStarted
+8 – CompletedWithErrors
+9 – InProgressWithFaults
+10 – OverQuota
+11 – NoSelection
+12 – Restarted</description>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>backupjobstatus</value>
+                        </tag>
+                        <tag>
+                            <tag>backup</tag>
+                            <value>status</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>47dc554e20604b828edf54cf9ff66ea9</uuid>
+                    <name>cove_sp_LastsuccessfulsessionTimestamp</name>
+                    <type>TRAP</type>
+                    <key>cove_sp_LastsuccessfulsessionTimestamp</key>
+                    <delay>0</delay>
+                    <history>20d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>backupjobstatus</value>
+                        </tag>
+                        <tag>
+                            <tag>backup</tag>
+                            <value>status</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>e105c9046f92484b9d1fc8982eadcb45</uuid>
+                    <name>cove_teams_LastCompletedSessionStatus</name>
+                    <type>TRAP</type>
+                    <key>cove_teams_LastCompletedSessionStatus</key>
+                    <delay>0</delay>
+                    <history>20d</history>
+                    <trends>0</trends>
+                    <description>cove_teams_LastCompletedSessionStatus
+1 – In process
+2 – Failed
+3 – Aborted
+5 – Completed
+6 – Interrupted
+7 – NotStarted
+8 – CompletedWithErrors
+9 – InProgressWithFaults
+10 – OverQuota
+11 – NoSelection
+12 – Restarted</description>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>backupjobstatus</value>
+                        </tag>
+                        <tag>
+                            <tag>backup</tag>
+                            <value>status</value>
+                        </tag>
+                    </tags>
+                    <triggers>
+                        <trigger>
+                            <uuid>fcf9a684168d411aab529ca1dfedae7c</uuid>
+                            <expression>last(/Cove Backup Check - /cove_teams_LastCompletedSessionStatus)&lt;&gt;5</expression>
+                            <name>Cove backup - ms teams - Last Completed Session Status Error</name>
+                            <priority>WARNING</priority>
+                            <description>Cove backup - teams  - Last Completed Session Status Error
+    1 – In process
+    2 – Failed
+    3 – Aborted
+    5 – Completed
+    6 – Interrupted
+    7 – NotStarted
+    8 – CompletedWithErrors
+    9 – InProgressWithFaults
+    10 – OverQuota
+    11 – NoSelection
+    12 – Restarted</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>03b354968ac64b4ea34111eb35ff456f</uuid>
+                    <name>cove_teams_LastCompletedSessionTimestamp</name>
+                    <type>TRAP</type>
+                    <key>cove_teams_LastCompletedSessionTimestamp</key>
+                    <delay>0</delay>
+                    <history>20d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>backupjobstatus</value>
+                        </tag>
+                        <tag>
+                            <tag>backup</tag>
+                            <value>status</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>742b8fd9d6bd48fdad06ec2f23885b6b</uuid>
+                    <name>cove_teams_LastSessionErrorsCount</name>
+                    <type>TRAP</type>
+                    <key>cove_teams_LastSessionErrorsCount</key>
+                    <delay>0</delay>
+                    <history>20d</history>
+                    <trends>0</trends>
+                    <description>if an error is counted, then there is an error detected</description>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>backupjobstatus</value>
+                        </tag>
+                        <tag>
+                            <tag>backup</tag>
+                            <value>status</value>
+                        </tag>
+                    </tags>
+                    <triggers>
+                        <trigger>
+                            <uuid>c075e0f13dbb4f9ba351221c3872839b</uuid>
+                            <expression>last(/Cove Backup Check - /cove_teams_LastSessionErrorsCount)&gt;=1</expression>
+                            <name>Cove backup - ms teams - Last Session Errors Count</name>
+                            <priority>WARNING</priority>
+                            <description>Cove backup - ms teams - Last Session Errors Count
+More then 0 errors, then there are errors found</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>a97505587a2a41fcbdf104b70e44850d</uuid>
+                    <name>cove_teams_LastSessionTimestamp</name>
+                    <type>TRAP</type>
+                    <key>cove_teams_LastSessionTimestamp</key>
+                    <delay>0</delay>
+                    <history>20d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>backupjobstatus</value>
+                        </tag>
+                        <tag>
+                            <tag>backup</tag>
+                            <value>status</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>17eb244dc44b447f8f6ec7637f041eeb</uuid>
+                    <name>cove_teams_LastSuccessfulSessionStatus</name>
+                    <type>TRAP</type>
+                    <key>cove_teams_LastSuccessfulSessionStatus</key>
+                    <delay>0</delay>
+                    <history>20d</history>
+                    <trends>0</trends>
+                    <description>cove_teams_LastSuccessfulSessionStatus
+1 – In process
+2 – Failed
+3 – Aborted
+5 – Completed
+6 – Interrupted
+7 – NotStarted
+8 – CompletedWithErrors
+9 – InProgressWithFaults
+10 – OverQuota
+11 – NoSelection
+12 – Restarted</description>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>backupjobstatus</value>
+                        </tag>
+                        <tag>
+                            <tag>backup</tag>
+                            <value>status</value>
+                        </tag>
+                    </tags>
+                    <triggers>
+                        <trigger>
+                            <uuid>794b43492f364af997c075419948f8d7</uuid>
+                            <expression>last(/Cove Backup Check - /cove_teams_LastSuccessfulSessionStatus)&lt;&gt;5</expression>
+                            <name>Cove backup - ms teams - Last Successful Session Status Error</name>
+                            <status>DISABLED</status>
+                            <priority>WARNING</priority>
+                            <description>Cove backup - ms teams - Last Successful Session Status Error
+    1 – In process
+    2 – Failed
+    3 – Aborted
+    5 – Completed
+    6 – Interrupted
+    7 – NotStarted
+    8 – CompletedWithErrors
+    9 – InProgressWithFaults
+    10 – OverQuota
+    11 – NoSelection
+    12 – Restarted</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>5ac9ce985afa41a3b152fe37f7c54447</uuid>
+                    <name>cove_teams_LastsuccessfulsessionTimestamp</name>
+                    <type>TRAP</type>
+                    <key>cove_teams_LastsuccessfulsessionTimestamp</key>
+                    <delay>0</delay>
+                    <history>20d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>cove_teams_LastsuccessfulsessionTimestamp</description>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>backupjobstatus</value>
+                        </tag>
+                        <tag>
+                            <tag>backup</tag>
+                            <value>status</value>
+                        </tag>
+                    </tags>
+                </item>
+            </items>
+            <tags>
+                <tag>
+                    <tag>backup</tag>
+                    <value>status</value>
+                </tag>
+            </tags>
+        </template>
+    </templates>
+</zabbix_export>
